@@ -99,7 +99,7 @@ namespace AlbumStore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Bisque;
+            this.BackColor = System.Drawing.Color.SandyBrown;
             this.ClientSize = new System.Drawing.Size(573, 276);
             this.Controls.Add(this.PercentageLbl);
             this.Controls.Add(this.label2);

@@ -32,9 +32,9 @@ namespace AlbumStore
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.LoginBtn = new System.Windows.Forms.Button();
+            this.UPassTb = new System.Windows.Forms.TextBox();
+            this.UnameTb = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,9 +48,9 @@ namespace AlbumStore
             // 
             this.panel1.BackColor = System.Drawing.Color.PeachPuff;
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.LoginBtn);
+            this.panel1.Controls.Add(this.UPassTb);
+            this.panel1.Controls.Add(this.UnameTb);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
@@ -73,32 +73,33 @@ namespace AlbumStore
             this.label5.Text = "X";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // button1
+            // LoginBtn
             // 
-            this.button1.Font = new System.Drawing.Font("Goudy Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(279, 350);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(127, 38);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Login";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.LoginBtn.Font = new System.Drawing.Font("Goudy Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LoginBtn.Location = new System.Drawing.Point(279, 350);
+            this.LoginBtn.Name = "LoginBtn";
+            this.LoginBtn.Size = new System.Drawing.Size(127, 38);
+            this.LoginBtn.TabIndex = 8;
+            this.LoginBtn.Text = "Login";
+            this.LoginBtn.UseVisualStyleBackColor = true;
+            this.LoginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
             // 
-            // textBox2
+            // UPassTb
             // 
-            this.textBox2.BackColor = System.Drawing.Color.PeachPuff;
-            this.textBox2.Location = new System.Drawing.Point(318, 272);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(285, 31);
-            this.textBox2.TabIndex = 7;
+            this.UPassTb.BackColor = System.Drawing.Color.PeachPuff;
+            this.UPassTb.Location = new System.Drawing.Point(318, 272);
+            this.UPassTb.Name = "UPassTb";
+            this.UPassTb.Size = new System.Drawing.Size(285, 31);
+            this.UPassTb.TabIndex = 7;
+            this.UPassTb.UseSystemPasswordChar = true;
             // 
-            // textBox1
+            // UnameTb
             // 
-            this.textBox1.BackColor = System.Drawing.Color.PeachPuff;
-            this.textBox1.Location = new System.Drawing.Point(318, 213);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(285, 31);
-            this.textBox1.TabIndex = 6;
+            this.UnameTb.BackColor = System.Drawing.Color.PeachPuff;
+            this.UnameTb.Location = new System.Drawing.Point(318, 213);
+            this.UnameTb.Name = "UnameTb";
+            this.UnameTb.Size = new System.Drawing.Size(285, 31);
+            this.UnameTb.TabIndex = 6;
             // 
             // label4
             // 
@@ -119,7 +120,6 @@ namespace AlbumStore
             this.label3.Size = new System.Drawing.Size(109, 27);
             this.label3.TabIndex = 4;
             this.label3.Text = "Username";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -141,7 +141,6 @@ namespace AlbumStore
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label1
             // 
@@ -152,7 +151,6 @@ namespace AlbumStore
             this.label1.Size = new System.Drawing.Size(160, 29);
             this.label1.TabIndex = 1;
             this.label1.Text = "Noona\'s Store";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Login
             // 
@@ -176,13 +174,13 @@ namespace AlbumStore
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox UnameTb;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button LoginBtn;
+        private System.Windows.Forms.TextBox UPassTb;
         private System.Windows.Forms.Label label5;
     }
 }

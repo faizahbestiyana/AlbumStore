@@ -57,10 +57,10 @@ namespace AlbumStore
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.AlbumDGV = new System.Windows.Forms.DataGridView();
-            this.button5 = new System.Windows.Forms.Button();
+            this.RefreshBtn = new System.Windows.Forms.Button();
             this.CatCbSearchCb = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.ResetBtn = new System.Windows.Forms.Button();
             this.DeleteBtn = new System.Windows.Forms.Button();
             this.EditBtn = new System.Windows.Forms.Button();
             this.AArtistTb = new System.Windows.Forms.TextBox();
@@ -120,6 +120,7 @@ namespace AlbumStore
             this.label10.Size = new System.Drawing.Size(87, 29);
             this.label10.TabIndex = 10;
             this.label10.Text = "Logout";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // pictureBox6
             // 
@@ -151,6 +152,7 @@ namespace AlbumStore
             this.label9.Size = new System.Drawing.Size(73, 29);
             this.label9.TabIndex = 10;
             this.label9.Text = "Users";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // pictureBox5
             // 
@@ -182,6 +184,7 @@ namespace AlbumStore
             this.label8.Size = new System.Drawing.Size(129, 29);
             this.label8.TabIndex = 10;
             this.label8.Text = "Dashboard";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // pictureBox4
             // 
@@ -330,10 +333,10 @@ namespace AlbumStore
             // 
             this.panel1.BackColor = System.Drawing.Color.PeachPuff;
             this.panel1.Controls.Add(this.AlbumDGV);
-            this.panel1.Controls.Add(this.button5);
+            this.panel1.Controls.Add(this.RefreshBtn);
             this.panel1.Controls.Add(this.CatCbSearchCb);
             this.panel1.Controls.Add(this.label14);
-            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.ResetBtn);
             this.panel1.Controls.Add(this.DeleteBtn);
             this.panel1.Controls.Add(this.EditBtn);
             this.panel1.Controls.Add(this.AArtistTb);
@@ -364,21 +367,22 @@ namespace AlbumStore
             this.AlbumDGV.Name = "AlbumDGV";
             this.AlbumDGV.RowHeadersWidth = 62;
             this.AlbumDGV.RowTemplate.Height = 33;
+            this.AlbumDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.AlbumDGV.Size = new System.Drawing.Size(924, 340);
             this.AlbumDGV.TabIndex = 24;
             this.AlbumDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AlbumDGV_CellContentClick);
             // 
-            // button5
+            // RefreshBtn
             // 
-            this.button5.BackColor = System.Drawing.Color.SandyBrown;
-            this.button5.Font = new System.Drawing.Font("Goudy Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button5.Location = new System.Drawing.Point(585, 338);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(127, 38);
-            this.button5.TabIndex = 23;
-            this.button5.Text = "Refresh";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.RefreshBtn.BackColor = System.Drawing.Color.SandyBrown;
+            this.RefreshBtn.Font = new System.Drawing.Font("Goudy Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.RefreshBtn.Location = new System.Drawing.Point(585, 338);
+            this.RefreshBtn.Name = "RefreshBtn";
+            this.RefreshBtn.Size = new System.Drawing.Size(127, 38);
+            this.RefreshBtn.TabIndex = 23;
+            this.RefreshBtn.Text = "Refresh";
+            this.RefreshBtn.UseVisualStyleBackColor = false;
+            this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
             // 
             // CatCbSearchCb
             // 
@@ -410,17 +414,17 @@ namespace AlbumStore
             this.label14.TabIndex = 21;
             this.label14.Text = "Album List";
             // 
-            // button4
+            // ResetBtn
             // 
-            this.button4.BackColor = System.Drawing.Color.SandyBrown;
-            this.button4.Font = new System.Drawing.Font("Goudy Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button4.Location = new System.Drawing.Point(633, 249);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(127, 38);
-            this.button4.TabIndex = 19;
-            this.button4.Text = "Reset";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.ResetBtn.BackColor = System.Drawing.Color.SandyBrown;
+            this.ResetBtn.Font = new System.Drawing.Font("Goudy Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ResetBtn.Location = new System.Drawing.Point(633, 249);
+            this.ResetBtn.Name = "ResetBtn";
+            this.ResetBtn.Size = new System.Drawing.Size(127, 38);
+            this.ResetBtn.TabIndex = 19;
+            this.ResetBtn.Text = "Reset";
+            this.ResetBtn.UseVisualStyleBackColor = false;
+            this.ResetBtn.Click += new System.EventHandler(this.ResetBtn_Click);
             // 
             // DeleteBtn
             // 
@@ -591,10 +595,10 @@ namespace AlbumStore
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox AArtistTb;
         private System.Windows.Forms.ComboBox ACatCb;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button RefreshBtn;
         private System.Windows.Forms.ComboBox CatCbSearchCb;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button ResetBtn;
         private System.Windows.Forms.Button DeleteBtn;
         private System.Windows.Forms.Button EditBtn;
         private System.Windows.Forms.Label label13;

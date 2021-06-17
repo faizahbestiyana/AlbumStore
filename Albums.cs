@@ -14,6 +14,7 @@ namespace AlbumStore
         public Albums()
         {
             InitializeComponent();
+            populate();
         }
         SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Acer\source\repos\AlbumStore\AlbumDb.mdf;Integrated Security=True");
         private void populate()
@@ -30,7 +31,7 @@ namespace AlbumStore
         private void Filter()
         {
             Con.Open();
-            string query = "select * from AlbumTable where ACat='" + CatCbSearchCb.SelectedIndex.ToString() + "'";
+            string query = "select * from AlbumTable where ACat='" + CatCbSearchCb.SelectedItem.ToString() + "'";
             SqlDataAdapter sda = new SqlDataAdapter(query, Con);
             SqlCommandBuilder builder = new SqlCommandBuilder(sda);
             var ds = new DataSet();
@@ -40,7 +41,7 @@ namespace AlbumStore
         }
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            if (ATitleTb.Text == "" || AArtistTb.Text == "" || ACatCb.SelectedIndex == -1 || QtyTb.Text == "" || PriceTb.Text == "")
+            if (ATitleTb.Text == "" || AArtistTb.Text == "" || QtyTb.Text == "" || PriceTb.Text == "" || ACatCb.SelectedIndex == -1)
             {
                 MessageBox.Show("Informasi Kurang");
             }
@@ -49,7 +50,9 @@ namespace AlbumStore
                 try
                 {
                     Con.Open();
-                    string query = "insert into AlbumTable values ('" + ATitleTb.Text + "', '" + AArtistTb.Text + "','" + ACatCb.SelectedItem.ToString() + "''" + QtyTb.Text + "', '" + PriceTb.Text + "')";
+                    string query = "insert into AlbumTable values ('" + ATitleTb.Text + "', '" + 
+                        AArtistTb.Text + "','" + ACatCb.SelectedItem.ToString() + "','" + QtyTb.Text +
+                        "', '" + PriceTb.Text + "')";
                     SqlCommand cmd = new SqlCommand(query, Con);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Album tersimpan");
@@ -60,6 +63,10 @@ namespace AlbumStore
                 {
                     MessageBox.Show(Ex.Message);
                 }
+                finally
+                {
+                    Con.Close();
+                }
             }
         }
 
@@ -68,7 +75,7 @@ namespace AlbumStore
             Filter();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void RefreshBtn_Click(object sender, EventArgs e)
         {
             populate();
             CatCbSearchCb.SelectedIndex = -1;
@@ -82,7 +89,7 @@ namespace AlbumStore
             QtyTb.Text = "";
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void ResetBtn_Click(object sender, EventArgs e)
         {
             Reset();
         }
@@ -95,13 +102,13 @@ namespace AlbumStore
             QtyTb.Text = AlbumDGV.SelectedRows[0].Cells[4].Value.ToString();
             PriceTb.Text = AlbumDGV.SelectedRows[0].Cells[5].Value.ToString();
 
-            if(ATitleTb.Text == "")
+            if (ATitleTb.Text == "")
             {
                 key = 0;
             }
             else
             {
-                key = Convert.ToInt32(AlbumDGV.SelectedRows[0].Cells[1].Value.ToString());
+                key = Convert.ToInt32(AlbumDGV.SelectedRows[0].Cells[0].Value.ToString());
             }
         }
 
@@ -133,7 +140,7 @@ namespace AlbumStore
 
         private void EditBtn_Click(object sender, EventArgs e)
         {
-            if (ATitleTb.Text == "" || AArtistTb.Text == "" || ACatCb.SelectedIndex == -1 || QtyTb.Text == "" || PriceTb.Text == "")
+            if (ATitleTb.Text == "" || AArtistTb.Text == ""  || QtyTb.Text == "" || PriceTb.Text == "" || ACatCb.SelectedIndex == -1)
             {
                 MessageBox.Show("Informasi Kurang");
             }
@@ -142,7 +149,9 @@ namespace AlbumStore
                 try
                 {
                     Con.Open();
-                    string query = "update AlbumTable set ATitle='" + ATitleTb.Text + "', AArtist='" + AArtistTb.Text+ "', ACat='" + ACatCb.SelectedItem.ToString()+ "', AQty = "+QtyTb.Text+", APrice="+ PriceTb.Text+" where AId="+key+";";
+                    string query = "update AlbumTable set ATitle='" + ATitleTb.Text + "', AArtist='" + 
+                        AArtistTb.Text+ "', ACat='" + ACatCb.SelectedItem.ToString()+ "', AQty = " + 
+                        QtyTb.Text +", APrice = " + PriceTb.Text + " where AId="+ key + ";";
                     SqlCommand cmd = new SqlCommand(query, Con);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Album tersimpan");
@@ -155,6 +164,26 @@ namespace AlbumStore
                     MessageBox.Show(Ex.Message);
                 }
             }
+        }
+        private void label10_Click(object sender, EventArgs e)
+        {
+            Login loginn = new Login();
+            loginn.Show();
+            this.Hide();
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            Users user = new Users();
+            user.Show();
+            this.Hide();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            Dashboard dashh = new Dashboard();
+            dashh.Show();
+            this.Hide();
         }
     }
 }

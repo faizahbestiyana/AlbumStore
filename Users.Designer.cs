@@ -33,18 +33,18 @@ namespace AlbumStore
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.UserDGV = new System.Windows.Forms.DataGridView();
+            this.ResetBtn = new System.Windows.Forms.Button();
+            this.DeleteBtn = new System.Windows.Forms.Button();
+            this.EditBtn = new System.Windows.Forms.Button();
+            this.PhoneTb = new System.Windows.Forms.TextBox();
+            this.PassTb = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.AddTb = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.SaveBtn = new System.Windows.Forms.Button();
+            this.UnameTb = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -65,7 +65,7 @@ namespace AlbumStore
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -93,18 +93,18 @@ namespace AlbumStore
             // 
             this.panel1.BackColor = System.Drawing.Color.PeachPuff;
             this.panel1.Controls.Add(this.label14);
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.UserDGV);
+            this.panel1.Controls.Add(this.ResetBtn);
+            this.panel1.Controls.Add(this.DeleteBtn);
+            this.panel1.Controls.Add(this.EditBtn);
+            this.panel1.Controls.Add(this.PhoneTb);
+            this.panel1.Controls.Add(this.PassTb);
             this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.AddTb);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.SaveBtn);
+            this.panel1.Controls.Add(this.UnameTb);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -125,65 +125,72 @@ namespace AlbumStore
             this.label14.TabIndex = 21;
             this.label14.Text = "Users List";
             // 
-            // dataGridView1
+            // UserDGV
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(37, 365);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(912, 352);
-            this.dataGridView1.TabIndex = 20;
+            this.UserDGV.BackgroundColor = System.Drawing.Color.SandyBrown;
+            this.UserDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.UserDGV.GridColor = System.Drawing.Color.Orange;
+            this.UserDGV.Location = new System.Drawing.Point(67, 365);
+            this.UserDGV.Name = "UserDGV";
+            this.UserDGV.RowHeadersWidth = 62;
+            this.UserDGV.RowTemplate.Height = 33;
+            this.UserDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.UserDGV.Size = new System.Drawing.Size(811, 352);
+            this.UserDGV.TabIndex = 20;
+            this.UserDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UserDGV_CellContentClick);
             // 
-            // button4
+            // ResetBtn
             // 
-            this.button4.BackColor = System.Drawing.Color.SandyBrown;
-            this.button4.Font = new System.Drawing.Font("Goudy Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button4.Location = new System.Drawing.Point(633, 249);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(127, 38);
-            this.button4.TabIndex = 19;
-            this.button4.Text = "Reset";
-            this.button4.UseVisualStyleBackColor = false;
+            this.ResetBtn.BackColor = System.Drawing.Color.SandyBrown;
+            this.ResetBtn.Font = new System.Drawing.Font("Goudy Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ResetBtn.Location = new System.Drawing.Point(633, 249);
+            this.ResetBtn.Name = "ResetBtn";
+            this.ResetBtn.Size = new System.Drawing.Size(127, 38);
+            this.ResetBtn.TabIndex = 19;
+            this.ResetBtn.Text = "Reset";
+            this.ResetBtn.UseVisualStyleBackColor = false;
+            this.ResetBtn.Click += new System.EventHandler(this.ResetBtn_Click);
             // 
-            // button3
+            // DeleteBtn
             // 
-            this.button3.BackColor = System.Drawing.Color.SandyBrown;
-            this.button3.Font = new System.Drawing.Font("Goudy Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(488, 249);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(127, 38);
-            this.button3.TabIndex = 18;
-            this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = false;
+            this.DeleteBtn.BackColor = System.Drawing.Color.SandyBrown;
+            this.DeleteBtn.Font = new System.Drawing.Font("Goudy Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DeleteBtn.Location = new System.Drawing.Point(488, 249);
+            this.DeleteBtn.Name = "DeleteBtn";
+            this.DeleteBtn.Size = new System.Drawing.Size(127, 38);
+            this.DeleteBtn.TabIndex = 18;
+            this.DeleteBtn.Text = "Delete";
+            this.DeleteBtn.UseVisualStyleBackColor = false;
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
-            // button2
+            // EditBtn
             // 
-            this.button2.BackColor = System.Drawing.Color.SandyBrown;
-            this.button2.Font = new System.Drawing.Font("Goudy Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(334, 249);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(127, 38);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "Edit";
-            this.button2.UseVisualStyleBackColor = false;
+            this.EditBtn.BackColor = System.Drawing.Color.SandyBrown;
+            this.EditBtn.Font = new System.Drawing.Font("Goudy Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.EditBtn.Location = new System.Drawing.Point(334, 249);
+            this.EditBtn.Name = "EditBtn";
+            this.EditBtn.Size = new System.Drawing.Size(127, 38);
+            this.EditBtn.TabIndex = 17;
+            this.EditBtn.Text = "Edit";
+            this.EditBtn.UseVisualStyleBackColor = false;
+            this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
             // 
-            // textBox2
+            // PhoneTb
             // 
-            this.textBox2.BackColor = System.Drawing.Color.PeachPuff;
-            this.textBox2.Font = new System.Drawing.Font("Goudy Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(238, 187);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(183, 29);
-            this.textBox2.TabIndex = 16;
+            this.PhoneTb.BackColor = System.Drawing.Color.PeachPuff;
+            this.PhoneTb.Font = new System.Drawing.Font("Goudy Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PhoneTb.Location = new System.Drawing.Point(238, 187);
+            this.PhoneTb.Name = "PhoneTb";
+            this.PhoneTb.Size = new System.Drawing.Size(183, 29);
+            this.PhoneTb.TabIndex = 16;
             // 
-            // textBox4
+            // PassTb
             // 
-            this.textBox4.BackColor = System.Drawing.Color.PeachPuff;
-            this.textBox4.Location = new System.Drawing.Point(728, 187);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(192, 29);
-            this.textBox4.TabIndex = 13;
+            this.PassTb.BackColor = System.Drawing.Color.PeachPuff;
+            this.PassTb.Location = new System.Drawing.Point(728, 187);
+            this.PassTb.Name = "PassTb";
+            this.PassTb.Size = new System.Drawing.Size(192, 29);
+            this.PassTb.TabIndex = 13;
             // 
             // label12
             // 
@@ -195,13 +202,13 @@ namespace AlbumStore
             this.label12.TabIndex = 12;
             this.label12.Text = "Password";
             // 
-            // textBox3
+            // AddTb
             // 
-            this.textBox3.BackColor = System.Drawing.Color.PeachPuff;
-            this.textBox3.Location = new System.Drawing.Point(535, 187);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(187, 29);
-            this.textBox3.TabIndex = 11;
+            this.AddTb.BackColor = System.Drawing.Color.PeachPuff;
+            this.AddTb.Location = new System.Drawing.Point(535, 187);
+            this.AddTb.Name = "AddTb";
+            this.AddTb.Size = new System.Drawing.Size(187, 29);
+            this.AddTb.TabIndex = 11;
             // 
             // label11
             // 
@@ -223,26 +230,28 @@ namespace AlbumStore
             this.label5.Size = new System.Drawing.Size(30, 29);
             this.label5.TabIndex = 9;
             this.label5.Text = "X";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // button1
+            // SaveBtn
             // 
-            this.button1.BackColor = System.Drawing.Color.SandyBrown;
-            this.button1.Font = new System.Drawing.Font("Goudy Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(175, 249);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(127, 38);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = false;
+            this.SaveBtn.BackColor = System.Drawing.Color.SandyBrown;
+            this.SaveBtn.Font = new System.Drawing.Font("Goudy Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SaveBtn.Location = new System.Drawing.Point(175, 249);
+            this.SaveBtn.Name = "SaveBtn";
+            this.SaveBtn.Size = new System.Drawing.Size(127, 38);
+            this.SaveBtn.TabIndex = 8;
+            this.SaveBtn.Text = "Save";
+            this.SaveBtn.UseVisualStyleBackColor = false;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
-            // textBox1
+            // UnameTb
             // 
-            this.textBox1.BackColor = System.Drawing.Color.PeachPuff;
-            this.textBox1.Font = new System.Drawing.Font("Goudy Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(37, 187);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(183, 29);
-            this.textBox1.TabIndex = 6;
+            this.UnameTb.BackColor = System.Drawing.Color.PeachPuff;
+            this.UnameTb.Font = new System.Drawing.Font("Goudy Old Style", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.UnameTb.Location = new System.Drawing.Point(37, 187);
+            this.UnameTb.Name = "UnameTb";
+            this.UnameTb.Size = new System.Drawing.Size(183, 29);
+            this.UnameTb.TabIndex = 6;
             // 
             // label4
             // 
@@ -304,6 +313,7 @@ namespace AlbumStore
             this.label7.Size = new System.Drawing.Size(94, 29);
             this.label7.TabIndex = 10;
             this.label7.Text = "Albums";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // pictureBox3
             // 
@@ -350,6 +360,7 @@ namespace AlbumStore
             this.label10.Size = new System.Drawing.Size(87, 29);
             this.label10.TabIndex = 10;
             this.label10.Text = "Logout";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // pictureBox6
             // 
@@ -412,6 +423,7 @@ namespace AlbumStore
             this.label8.Size = new System.Drawing.Size(129, 29);
             this.label8.TabIndex = 10;
             this.label8.Text = "Dashboard";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // pictureBox4
             // 
@@ -457,7 +469,7 @@ namespace AlbumStore
             this.Text = "Users";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -483,18 +495,18 @@ namespace AlbumStore
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.DataGridView UserDGV;
+        private System.Windows.Forms.Button ResetBtn;
+        private System.Windows.Forms.Button DeleteBtn;
+        private System.Windows.Forms.Button EditBtn;
+        private System.Windows.Forms.TextBox PhoneTb;
+        private System.Windows.Forms.TextBox PassTb;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox AddTb;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button SaveBtn;
+        private System.Windows.Forms.TextBox UnameTb;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
